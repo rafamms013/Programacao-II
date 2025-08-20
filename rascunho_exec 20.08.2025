@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 10, temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
+
+
+
+/////////
+
+
+
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 10;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    float despesa, gorjetaPercentual, valorTotal, valorPorPessoa;
+    int numPessoas;
+
+    printf("Digite o valor da despesa: R$ ");
+    scanf("%f", &despesa);
+
+    printf("Digite a porcentagem da gorjeta: ");
+    scanf("%f", &gorjetaPercentual);
+
+    printf("Digite o número de pessoas: ");
+    scanf("%d", &numPessoas);
+
+    valorTotal = despesa + (despesa * gorjetaPercentual / 100);
+    valorPorPessoa = valorTotal / numPessoas;
+
+    printf("Cada pessoa deve pagar: R$ %.2f\n", valorPorPessoa);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main() {
+    int dias;
+    float salarioBruto, salarioLiquido;
+
+    printf("Digite o número de dias trabalhados: ");
+    scanf("%d", &dias);
+
+    salarioBruto = dias * 45.0;
+    salarioLiquido = salarioBruto * 0.92;  // 8% de desconto
+
+    printf("Salário líquido: R$ %.2f\n", salarioLiquido);
+
+    return 0;
+}
