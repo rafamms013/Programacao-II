@@ -1,0 +1,103 @@
+Exercicios aula 27/08/2025
+
+01
+#include <stdio.h>
+
+int main() {
+    int a, b, c, maior, menor;
+
+    printf("Digite três números: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    maior = a;
+    if(b > maior) maior = b;
+    if(c > maior) maior = c;
+
+    menor = a;
+    if(b < menor) menor = b;
+    if(c < menor) menor = c;
+
+    printf("Maior número: %d\n", maior);
+    printf("Menor número: %d\n", menor);
+
+    return 0;
+}
+---------------------------------------------------
+
+02
+#include <stdio.h>
+
+int main() {
+    int i, num, positivos = 0, negativos = 0, zeros = 0;
+
+    for(i = 0; i < 5; i++) {
+        printf("Digite um número: ");
+        scanf("%d", &num);
+
+        if(num > 0)
+            positivos++;
+        else if(num < 0)
+            negativos++;
+        else
+            zeros++;
+    }
+
+    printf("Positivos: %d\n", positivos);
+    printf("Negativos: %d\n", negativos);
+    printf("Zeros: %d\n", zeros);
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------
+03
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Digite um número: ");
+    scanf("%d", &num);
+
+    if(num % 2 == 0)
+        printf("É divisível por 2\n");
+    if(num % 3 == 0)
+        printf("É divisível por 3\n");
+    if(num % 5 == 0)
+        printf("É divisível por 5\n");
+    if(num % 2 != 0 && num % 3 != 0 && num % 5 != 0)
+        printf("Não é divisível por 2, 3 ou 5\n");
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------
+04 
+#include <stdio.h>
+
+int main() {
+    int opcao;
+    float valor, convertido;
+    float taxa = 5.30;
+
+    printf("Escolha a conversão:\n");
+    printf("1 - Real para Dólar\n");
+    printf("2 - Dólar para Real\n");
+    scanf("%d", &opcao);
+
+    if(opcao == 1) {
+        printf("Digite o valor em Reais: R$ ");
+        scanf("%f", &valor);
+        convertido = valor / taxa;
+        printf("Valor em Dólar: $%.2f\n", convertido);
+    } else if(opcao == 2) {
+        printf("Digite o valor em Dólares: $ ");
+        scanf("%f", &valor);
+        convertido = valor * taxa;
+        printf("Valor em Reais: R$%.2f\n", convertido);
+    } else {
+        printf("Opção inválida.\n");
+    }
+
+    return 0;
+}
